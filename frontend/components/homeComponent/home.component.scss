@@ -1,0 +1,32 @@
+@import "../../utils/vars";
+
+:host {
+    .scroll-container {
+        height: 100%;
+        overflow: auto;
+
+        table {
+            width: 100%;
+            background: $BgGrayLightest;
+            thead {
+                th {
+                    padding: 20px;
+                    background: darken($BgGrayLightest, 10%);
+                }
+            }
+
+            tbody {
+                td {
+                    padding: 10px;
+                }
+
+                tr {
+                    cursor: pointer;
+                    &:nth-child(odd) {
+                        background: lighten($BgGrayCoolLight, 20%);
+                    }
+                }
+            }
+        }
+    }
+}

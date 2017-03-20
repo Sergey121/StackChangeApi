@@ -1,0 +1,79 @@
+@import "../../utils/vars";
+
+$bDefault: $BgGrayCoolLight;
+$bDark: $BgGray;
+$bPrimary: $Primary;
+
+:host {
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 200000;
+        background: rgba(0, 0, 0, .3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > .container {
+            position: relative;
+            background: $bDefault;
+            border: 1px solid darken($bDefault, 10);
+            border-radius: 2px;
+            flex-direction: column;
+            overflow: auto;
+            max-width: 90%;
+            max-height: 90%;
+
+            & > .modal-close {
+                position: absolute;
+                top: 13px;
+                right: 10px;
+                cursor: pointer;
+
+                & > svg {
+                    fill: $bDark;
+                    transition: fill .2s;
+                }
+
+                &:hover {
+                    & > svg {
+                        fill: $bPrimary;
+                    }
+                }
+            }
+
+            & /deep/ .modal-title {
+                height: 50px;
+                width: auto;
+                display: flex;
+                align-items: center;
+                background: darken($bDefault, 5);
+                border-bottom: 1px solid darken($bDefault, 10);
+                font-size: 20px;
+                padding: 0 40px 0 10px;
+            }
+
+            & /deep/ .modal-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 10px;
+                flex-grow: 1;
+                overflow: auto;
+
+                & > .modal-text {
+                    font-size: 16px;
+                }
+
+                & > .modal-buttons {
+                    display: flex;
+                    margin-top: auto;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}

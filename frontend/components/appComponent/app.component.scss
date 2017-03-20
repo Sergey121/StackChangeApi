@@ -1,0 +1,9 @@
+@import "../../utils/vars";
+
+html,
+body {
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+    height: 100%;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
