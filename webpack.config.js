@@ -11,11 +11,7 @@ function makeConfig(env = {}) {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'
         }),
-        new CopyWebpackPlugin([
-            {
-                from: 'frontend/images',
-                to: 'images'
-            },
+        new CopyWebpackPlugin([            
             {
                 from: 'frontend/index.html',
                 to: 'index.html'
